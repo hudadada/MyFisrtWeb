@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 class Config:
     DEBUG = True
-    SQLALCHEMY_DATABASE_URI = "mysql://root:mysql@127.0.0.1:3306/myweb"
+    SQLALCHEMY_DATABASE_URI = "mysql://root:mysql@127.0.0.1:3306/myfirstweb"
     SQLALCHEMY_TRACK_MODIFICATIONS = False
 
     REDIS_HOST = '127.0.0.1'
