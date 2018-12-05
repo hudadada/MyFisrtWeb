@@ -1,4 +1,7 @@
+from logging.handlers import RotatingFileHandler
+
 from flask import Flask
+import logging
 from flask_migrate import Migrate
 
 from flask_session import Session
@@ -9,6 +12,13 @@ from config import config_dict
 
 db = None
 sr = None
+def setup_log(log_level):
+    logging.basicConfig(level = log_level)
+
+    file_log_handler = RotatingFileHandler("logs/log",maxBytes=1024*1024*100,backupCount=10)
+    formatter = logging.Formatter("%(levelname)s %(pathname)s:%(lineno)d%(message)s")
+    file_log_handler.setFormatter(formatter)
+    logging.getLogger().addHandler(file_log_handler)
 
 def create_app(config_type):
     config_class = config_dict.get(config_type)
@@ -30,5 +40,6 @@ def create_app(config_type):
     from info.modules.home import home_blue
     app.register_blueprint(home_blue)
 
+    setup_log(config_class.LOG_LEVEL)
     return app
 

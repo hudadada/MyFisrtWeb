@@ -1,0 +1,6 @@
+INFO /home/python/.virtualenvs/hudada/lib/python3.6/site-packages/werkzeug/_internal.py:88 * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+INFO /home/python/.virtualenvs/hudada/lib/python3.6/site-packages/werkzeug/_internal.py:88 * Restarting with stat
+WARNING /home/python/.virtualenvs/hudada/lib/python3.6/site-packages/werkzeug/_internal.py:88 * Debugger is active!
+INFO /home/python/.virtualenvs/hudada/lib/python3.6/site-packages/werkzeug/_internal.py:88 * Debugger PIN: 312-830-203
+ERROR /home/python/Desktop/githup_flask/MyFisrtWeb/info/modules/home/views.py:10出现的错误
+INFO /home/python/.virtualenvs/hudada/lib/python3.6/site-packages/werkzeug/_internal.py:88127.0.0.1 - - [05/Dec/2018 21:46:35] "GET / HTTP/1.1" 200 -

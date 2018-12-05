@@ -1,5 +1,6 @@
 from datetime import timedelta
 
+import logging
 from redis import StrictRedis
 
 
@@ -21,9 +22,11 @@ class Config:
 
 class Development(Config):
     DEBUG = True
+    LOG_LEVEL = logging.DEBUG
 
 class Production(Config):
     DEBUG = False
+    LOG_LEVEL = logging.ERROR
 
 
 config_dict = {
