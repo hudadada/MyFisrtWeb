@@ -7,14 +7,17 @@ from redis import StrictRedis
 
 from config import config_dict
 
-
+db = None
+sr = None
 
 def create_app(config_type):
     config_class = config_dict.get(config_type)
     app = Flask(__name__)
     # 封装配置 从对象中加载配置
     app.config.from_object(config_class)
+
     # 创建数据库连接对象
+    global sr,db
     db = SQLAlchemy(app)
     # 创建redis连接对象
     sr = StrictRedis(host=config_class.REDIS_HOST, port=config_class.REDIS_PORT)
